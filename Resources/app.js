@@ -32,7 +32,7 @@ if (Ti.version < 1.8 ) {
 		
 	});
 	imagen.addEventListener('click',function(){
-		text = 'Hello from Ticr',
+		text = 'Hello from Ticr1',
 		text.font = '{fontSize: 34}'
 		});
 	win.add(imagen);
