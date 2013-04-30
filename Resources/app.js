@@ -21,22 +21,35 @@ if (Ti.version < 1.8 ) {
 		backgroundColor: '#223344',
 	});
 	
-	var text = Titanium.UI.createLabel({
-		text: 'Hello word!',
-		font: {fontSize: 48}
+	var btn = Titanium.UI.createButton({
+			title: 'Hello World',
+			width: 100,
+			top: 10,
 	});
 	
-	var imagen = Titanium.UI.createImageView({
-		image: 'http://www.ticr.com/images/logo.png',
-		top: 0,
-		
+	btn.addEventListener('click', function(){
+		var win1 = Ti.UI.createWindow({
+						title: 'Hello World',
+						url: 'hello.js',
+					});
+		win1.open();
 	});
-	imagen.addEventListener('click',function(){
-		text = 'Hello from Ticr',
-		text.font = '{fontSize: 34}'
-		});
-	win.add(imagen);
-	win.add(text);
+	
+	var btn1 = Titanium.UI.createButton({
+			title: 'List Event',
+			width: 100,
+			top: 60,
+	});
+	
+	btn1.addEventListener('click', function(){
+		var win2 = Ti.UI.createWindow({
+						title: 'List Event',
+						url: 'listEvent.js',
+					});
+		win2.open();
+	});
+	win.add(btn);
+	win.add(btn1);
 	win.open();
 	
 }
