@@ -17,7 +17,8 @@ var table = Ti.UI.createTableView({
 var tableData = [];
 btn.addEventListener('click', function(){	
 	var client = Ti.Network.createHTTPClient();
-	var url = 'http://www.xenn.com/mobile/test.php';
+	var domain = 'http://www.ticr.com/';
+	var url = domain + 'index.php?option=com_mobile';
 	client.open('POST',url);
 	
 	client.onload = function(){
@@ -28,34 +29,49 @@ btn.addEventListener('click', function(){
 		for (var i=0; i < responses.length; i++) {
 			var row = Ti.UI.createTableViewRow({
 			 	height: '60dp',
+			 	touchEnabled: true,
+			 	rowIndex:i,
+			 	link: responses[i].streamer,
 			 });
 			 
 			var nameLabel = Ti.UI.createLabel({
-            text:responses[i].name,
+            text:responses[i].title,
             font:{
-                fontSize:'24dp',
+                fontSize:'14dp',
             	fontWeight:'bold'
 	        	},
 	        height:'auto',
-	        left:'10dp',
+	        left:'70dp',
 	        top:'5dp',
 	        color:'#000',
+	        link: responses[i].streamer,
 	        });
 	        
 	        var catLabel = Ti.UI.createLabel({
-	        text:'"' + responses[i].category + '"',
+	        text:'"' + responses[i].category_title + '"',
 	        font:{
-	            fontSize:'16dp'
+	            fontSize:'12dp'
 	        },
 	        height:'auto',
-	        left:'15dp',
+	        left:'75dp',
 	        bottom:'5dp',
 	        color:'#000',
-	        touchEnabled:false
+	        touchEnabled:false,
+	        link: responses[i].streamer,
 	        });
         
+        	var image = Ti.UI.createImageView({
+        		image: domain + responses[i].thumbnail,
+        		width: 40,
+        		height: 30,
+        		left: '8dp',
+        		top: '10dp',
+        		link: responses[i].streamer,
+        	});
+                	
+        	row.add(image);
 	        row.add(nameLabel);
-	        row.add(catLabel);
+	        row.add(catLabel);        
 	        tableData.push(row);
 		};
 		table.setData(tableData);
@@ -80,6 +96,9 @@ btn1.addEventListener('click', function(){
 	win1.open();
 });
 
+table.addEventListener('click', function(e){
+	alert(e.source.link);
+});
 
 win.add(table);
 win.add(btn);

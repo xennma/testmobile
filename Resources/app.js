@@ -48,6 +48,8 @@ if (Ti.version < 1.8 ) {
 					});
 		win2.open();
 	});
+	
+		
 	win.add(btn);
 	win.add(btn1);
 	win.open();
