@@ -38,7 +38,7 @@ if (Ti.version < 1.8 ) {
 	var btn1 = Titanium.UI.createButton({
 			title: 'List Event',
 			width: 100,
-			top: 60,
+			top: 50,
 	});
 	
 	btn1.addEventListener('click', function(){
@@ -49,9 +49,22 @@ if (Ti.version < 1.8 ) {
 		win2.open();
 	});
 	
-		
+	var btn2 = Ti.UI.createButton({
+		title: 'Form',
+		width: '100',
+		top: 90,
+	}); 
+	btn2.addEventListener('click', function(){
+	var win3 = Ti.UI.createWindow({
+						title: 'Form',
+						url: 'form.js',
+					});
+		win3.open();
+	});
+	
 	win.add(btn);
 	win.add(btn1);
+	win.add(btn2);
 	win.open();
 	
 }
