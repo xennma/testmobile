@@ -62,9 +62,36 @@ if (Ti.version < 1.8 ) {
 		win3.open();
 	});
 	
+	var btn3 = Ti.UI.createButton({
+		title: 'Video',
+		width: '100',
+		top: 130,
+	}); 
+	btn3.addEventListener('click', function(){
+	var win4 = Ti.UI.createWindow({
+						title: 'Video',
+						url: 'video.js',
+					});
+		win4.open();
+	});
+	
+	var btn4 = Ti.UI.createButton({
+		title: 'Camera',
+		width: '100',
+		top: 170,
+	}); 
+	btn4.addEventListener('click', function(){
+	var win5 = Ti.UI.createWindow({
+						title: 'Camera',
+						url: 'camera.js',
+					});
+		win5.open();
+	});
 	win.add(btn);
 	win.add(btn1);
 	win.add(btn2);
+	win.add(btn3);
+	win.add(btn4);
 	win.open();
 	
 }

@@ -31,7 +31,7 @@ btn.addEventListener('click', function(){
 			 	height: '60dp',
 			 	touchEnabled: true,
 			 	rowIndex:i,
-			 	link: responses[i].streamer,
+			 	link: domain + responses[i].streamer,
 			 });
 			 
 			var nameLabel = Ti.UI.createLabel({
@@ -44,7 +44,7 @@ btn.addEventListener('click', function(){
 	        left:'70dp',
 	        top:'5dp',
 	        color:'#000',
-	        link: responses[i].streamer,
+	        link: domain + responses[i].streamer,
 	        });
 	        
 	        var catLabel = Ti.UI.createLabel({
@@ -57,7 +57,7 @@ btn.addEventListener('click', function(){
 	        bottom:'5dp',
 	        color:'#000',
 	        touchEnabled:false,
-	        link: responses[i].streamer,
+	        link: domain + responses[i].streamer,
 	        });
         
         	var image = Ti.UI.createImageView({
@@ -66,7 +66,7 @@ btn.addEventListener('click', function(){
         		height: 30,
         		left: '8dp',
         		top: '10dp',
-        		link: responses[i].streamer,
+        		link: domain + responses[i].streamer,
         	});
                 	
         	row.add(image);
