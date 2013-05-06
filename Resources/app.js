@@ -87,11 +87,26 @@ if (Ti.version < 1.8 ) {
 					});
 		win5.open();
 	});
+	
+	var btn5 = Ti.UI.createButton({
+		title: 'Map',
+		width: '100',
+		top: 210,
+	}); 
+	btn5.addEventListener('click', function(){
+	var win5 = Ti.UI.createWindow({
+						title: 'Map',
+						url: 'map.js',
+					});
+		win5.open();
+	});
+		
 	win.add(btn);
 	win.add(btn1);
 	win.add(btn2);
 	win.add(btn3);
 	win.add(btn4);
+	win.add(btn5);
 	win.open();
 	
 }
